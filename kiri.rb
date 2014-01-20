@@ -17,21 +17,23 @@ def start
 	  elsif answer.include?("is my name") and answer.include?("?") and answer.include?("what")
 	    puts "your name is #{name}"
 	   elsif answer.include?("like your work") and answer.include?("you") and answer.include?("?")  
-	  	puts "no,you Annoying me !!"		
+	  	puts "no,you are annoying me !!"		
 	   elsif answer.include?("are you") and answer.include?("?")
 	    puts "i will think about that."
 	   elsif answer.include?("do you like") and answer.include?("?")
 	   puts "yes i do." 	   
-	 	elsif answer.chomp == "bye" 
-	puts "bay #{name}" and exit  
+	 	elsif answer.include?("bye") 
+			puts "bye #{name}" and exit  
 	 	elsif answer.include?("ok")
 	 	puts "how can i help you, #{name}?"
-	 	elsif answer.include? ("you are") name = gets 
+	 	elsif answer.include?("you are")
+	 	name = gets 
 	 	puts "you are #{name}" 
-	 			
+		elsif answer.include?("the time") and answer.include?("?")
+	 			puts "#{Time.now.hour}:#{Time.now.min}"
 	 	else
 	 		puts "i don't understand what you mean..."
-      puts "how can i help you, #{name}?"
+      		puts "how can i help you, #{name}?"
 	   end
 	end
 end
